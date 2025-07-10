@@ -8,4 +8,4 @@ FROM alpine:3.22.0
 WORKDIR /
 COPY --from=stage0 /r2a /r2a
 EXPOSE 8080
-ENTRYPOINT ["/r2a"]
+CMD ["/r2a"]
