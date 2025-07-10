@@ -13,5 +13,13 @@ resource "render_web_service" "test" {
       runtime       = "go"
     }
   }
+  custom_domains = [
+    {
+      name : "scepter-gripe-wrench.com",
+    },
+    {
+      name : "www.scepter-gripe-wrench.com",
+    }
+  ]
   start_command = "go run ."
 }
