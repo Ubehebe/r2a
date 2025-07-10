@@ -5,12 +5,11 @@ resource "render_web_service" "test" {
   num_instances     = 1
   region            = "oregon"
   runtime_source = {
-    native_runtime = {
+    docker = {
       auto_deploy   = true
       branch        = "main"
-      build_command = "go build"
+      dockerfile_path = "./Dockerfile"
       repo_url      = "https://github.com/Ubehebe/r2a"
-      runtime       = "go"
     }
   }
   custom_domains = [
@@ -21,5 +20,4 @@ resource "render_web_service" "test" {
       name : "www.scepter-gripe-wrench.com",
     }
   ]
-  start_command = "go run ."
 }
