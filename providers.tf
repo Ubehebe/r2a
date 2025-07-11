@@ -1,10 +1,18 @@
 terraform {
   required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.81.0"
+    }
     render = {
       source  = "render-oss/render"
       version = "1.7.0"
     }
   }
+}
+
+provider "aws" {
+  region = "us-west-1"
 }
 
 provider "render" {
